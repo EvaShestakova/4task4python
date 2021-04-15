@@ -12,6 +12,9 @@ if im1.size!=im2.size:
     exit()
 arr1=np.array(im1)
 arr2=np.array(im2)
+if arr1.shape[2]!=3 or arr2.shape[2]!=3:
+    print("Формат не тот")
+    exit()
 for i in range(arr1.shape[0]):
     for j in range(arr1.shape[1]):
         if (arr2[i,j,0]==0) and (arr2[i,j,1]==0) and (arr2[i,j,2]==0):
