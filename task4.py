@@ -10,11 +10,11 @@ except FileNotFoundError:
 if im1.size!=im2.size:
     print("Размеры не совпадают")
     exit()
-arr1=np.array(im1)
-arr2=np.array(im2)
-if arr1.shape[2]!=3 or arr2.shape[2]!=3:
+if im1.mode!='RGB' or im2.mode!='RGB':
     print("Формат не тот")
     exit()
+arr1=np.array(im1)
+arr2=np.array(im2)
 for i in range(arr1.shape[0]):
     for j in range(arr1.shape[1]):
         if (arr2[i,j,0]==0) and (arr2[i,j,1]==0) and (arr2[i,j,2]==0):
